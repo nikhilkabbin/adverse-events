@@ -1,0 +1,8 @@
+{
+  "heading": "Adverse Events",
+  "description": "The Adverse Event Reporting System (AERS) depicts information on adverse event and medication error reports submitted to FDA.",
+  "tags": ["Adverse Events","Pharmaceutical"],
+  "img_path": "assets/img/aers.png",
+  "alt": "Adverse Events",
+  "github_link": "https://github.com/nikhilkabbin/adverse-events"
+}
