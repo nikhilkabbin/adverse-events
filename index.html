@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Adverse Events</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  {% set base = '.' %}
+  {% include template-navbar.html %}
+  <div class="container-fluid">
+    <div class="row mb-4">
+      <div class="col-xs-12 description-panel">
+        <div class="intro-text m-4">
+          <p>An adverse event is any undesirable experience associated with the use of a medical product. The Adverse Event
+          Reporting System (AERS) depicts information on adverse event and medication error reports submitted to FDA.
+          The dashboards are designed to understand how serious were the adverse events & when it occured.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="assets/img/day-wise.jpg" alt="First slide">
+              <div class="carousel-caption">Day wise Adverse Events</div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="assets/img/mnfr-wise.jpg" alt="Second slide">
+              <div class="carousel-caption">Manufacturer wise Adverse Events</div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="assets/img/serious-reports.jpg" alt="Third slide">
+              <div class="carousel-caption">Serious Reports</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="my-4">
+          <div class="row">
+            <div class="col-md-4">
+              <a href="/day-wise-events">
+                <div class="nav-box nav-link daywise"></div>
+              </a>
+              <div class="pt-2 font-weight-bold text-center">When did adverse events occur most ?</div>
+            </div>
+            <div class="col-md-4">
+              <a href="/manufacturer-wise-events">
+                <div class="nav-box nav-link mfrwise"></div>
+              </a>
+              <div class="pt-2 font-weight-bold text-center">In which age group is most of the
+                adverse events recorded ?</div>
+            </div>
+            <div class="col-md-4">
+              <a href="/serious-events">
+                <div class="nav-box nav-link seriousreport"></div>
+              </a>
+              <div class="pt-2 font-weight-bold text-center">How serious were the adverse events ?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- .container-fluid -->
+
+  <script src="ui/jquery/dist/jquery.min.js"></script>
+  <script src="ui/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Commonly used libraries:
+  <script src="ui/d3v5/dist/d3.min.js"></script>
+  <script src="ui/lodash/lodash.min.js"></script>
+  <script src="ui/morphdom/dist/morphdom-umd.min.js"></script>
+  <script src="ui/g1/dist/g1.min.js"></script>
+  <script src="ui/moment/min/moment-with-locales.min.js"></script>
+  <script src="ui/daterangepicker/daterangepicker.js"></script>
+  <script src="ui/leaflet/dist/leaflet.js"></script>
+  <script src="ui/topojson/dist/topojson.min.js"></script>
+  -->
+</body>
+
+</html>

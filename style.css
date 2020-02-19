@@ -1,0 +1,96 @@
+/*  UI component styles. Customize via ?bootstrap-variable=encoded-value. Example:
+    Colors. Can be a name or a number (e.g. %23aabbcc). Preserve the hues below.
+      primary=blue
+      success=green
+      info=cyan
+      warning=orange
+      danger=red
+      secondary=grey
+      light=lightgrey
+      dark=darkgrey
+      body-bg=white
+      body-color=black
+    Fonts. Can be a system font or Open+Sans, Roboto, Lato, Anton, Monserrat
+      font-family-base=Segoe+UI
+      headings-font-family=Segoe+UI
+    Other
+      https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss
+*/
+@import url("ui/bootstraptheme.css?body-bg=white&navbar-dark-color=rgba(255%2C255%2C255%2C.8)&navbar-dark-hover-color=white");
+/* For v4 icons, use url("ui/font-awesome/css/font-awesome.min.css") */
+@import url("ui/@fortawesome/fontawesome-free/css/all.min.css");
+
+.description-panel {
+  background-color: beige;
+}
+
+.daywise {
+  background:url('assets/img/daywise_tmbnl.png');
+}
+
+.mfrwise {
+  background:url('assets/img/mfrwise_tmbnl.png');
+}
+
+.seriousreport {
+  background:url('assets/img/seriousreport_tmbnl.png');
+}
+
+/* custom styles for app: adverse-events v1 */
+.nav-box {
+  padding: 19px 10px;
+  text-align: center;
+  font-size: 34px;
+  color: #fdfdfd;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -mozbox-sizing: border-box;
+  cursor: pointer;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: auto;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border: 4px solid #dddddd;
+}
+
+.nav-box:hover {
+  border: 6px solid rgb(80, 75, 75);
+}
+
+.carousel-caption {
+  font-size: 1.5rem;
+  color: #fff;
+  pointer-events: none;
+}
+
+.carousel {
+  border: 4px solid #dddddd;
+}
+.nav-link {
+  cursor: pointer;
+}
+
+.card {
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 0rem !important;
+}
+.card-footer {
+  background-color: rgba(0,0,0,0.01) !important;
+  border-top: 0px !important;
+}
+
+th, tr {
+  font-size: 0.8rem;
+}
+
+th {
+  padding: 8px 3px;
+  background: #351E00;
+  color: #fafafa;
+  position: relative;
+  font-size: 10px;
+  letter-spacing: 1px;
+}

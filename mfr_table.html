@@ -1,0 +1,36 @@
+<script type="text/html" class="mfr-table">
+  <table class="table table-bordered" id="data-table">
+    <thead>
+      <tr>
+        <th colspan="2" style="width:12%;">Total</th>
+        <%_.each(cols, function(d){ %>
+        <th>
+          <div class="vertical-head">
+            <%=format_number(_.sum(_.map(data, d)))%>
+          </div>
+        </th>
+        <% }) %>
+      </tr>
+      <tr>
+        <th class="sort-head" style="width:8%;">Manufacturer</th>
+        <th class="sort-head" style="width:4%;">Total</th>
+        <%_.each(cols, function(d){ %>
+          <th class="sort-head"><%=configs[d] || d%></th>
+        <% }) %>
+      </tr>
+    </thead>
+    <tbody>
+      <%_.each(data, function(d){ %>
+        <tr>
+          <td><%=d['mfr_sndr']%></td>
+          <td>
+            <%=format_number(_.sum(_.values(_.pickBy(data.filter(v => v.mfr_sndr == d['mfr_sndr'])[0], _.isNumber))))%>
+          </td>
+          <%_.each(cols, function(col){ %>
+            <td style="background: <%=gradient(d[col])%>"><%=d[col]%></td>
+          <% }) %>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</script>

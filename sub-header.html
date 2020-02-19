@@ -1,0 +1,60 @@
+{% set from gramex.config import variables %}
+{% set from adverse_events import filters %}
+{% set allfilters = filters(handler) %}
+{% set selected_year = allfilters['selected_year']  %}
+<script>
+  var currentpage = "{{base}}";
+</script>
+<div class="row my-4">
+  <div class="col-sm-12">
+    <div class="card shadow-sm">
+      <div class="card-header">
+        <h5 class="card-title float-left">{{ variables[base]['header'] }} (Jan {{ selected_year }} - {{ 'Mar' if selected_year == 2014 else 'Dec' }} {{ selected_year }})</h5>
+        <select class="yearpicker selectpicker float-right" data-style="btn-info" name="year">
+          {% for year in allfilters['years'] %}
+              {% if year == selected_year %}
+                  <option title="Year: {{ year }}" selected>{{ year }}</option>
+              {% else %}
+                  <option title="Year: {{ year }}">{{ year }}</option>
+              {% end %}
+          {% end %}
+        </select>
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{ variables[base]['description'] }}</p>
+        {% if 'local_filters' in variables[base].keys() %}
+          <div class="local-switch mb-2 text-right">
+            {% set radio_buttons = variables[base]['local_filters']['radio_buttons'] %}
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              {% for k, v in radio_buttons['values'].items() %}
+                {% if k in handler.args.get('view', [radio_buttons['default']])[0] %}
+                  <label class="btn btn-info active">
+                    <input type="radio" name="view" value="{{ k }}" autocomplete="off" checked> {{ v }}
+                  </label>
+                {% else %}
+                  <label class="btn btn-info">
+                    <input type="radio" name="view" value="{{ k }}" autocomplete="off"> {{ v }}
+                  </label>
+                {% end %}
+              {% end %}
+            </div>
+          </div>
+        {% end %}
+        <div class="visual my-4">
+          {% if base == 'manufacturer-wise-events' %}
+            {% include mfr_table.html %}
+          {% else %}
+            <div id="chart"></div>
+          {% end %}
+        </div>
+      </div>
+      <div class="card-footer text-muted text-right">
+        <div class="row">
+          <div class="col-sm-3">
+            {% include legend.html %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
